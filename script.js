@@ -1,5 +1,11 @@
-// var hour = moment().hour();
-var hour = 12;
+var hour = moment().hour();
+var daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var dayOfWeek = moment().isoWeekday();
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var month = moment().month();
+var dateOfWeek = moment().date();
+console.log(dateOfWeek);
+
 // console.log(hour)
 // var i = 11;
 // var test = $(".number-" + 12).attr('value');
@@ -28,3 +34,11 @@ $('.saveBtn').on('click', function() {
     }
   }
 })
+
+
+setDay();
+function setDay() {
+  var day = daysOfWeek[(dayOfWeek - 1)]
+  
+  $('#currentDay').text(day + ', ' + months[month] + ' ' + dateOfWeek);
+}
