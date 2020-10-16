@@ -1,4 +1,0 @@
--- Get Current Hour
--- //moment().hour();
--- //moment().hours();
--- 
