@@ -21,18 +21,26 @@ function backgroundColors() {
 
 $('.saveBtn').on('click', function() {
   for (var i = 9; i <= 17; i++) {
-    if ($('ta' + i) != null) {
+    if ($('ta' + i) !== null) {
       var test = $('.ta-' + i).val();
-      console.log(test);
       localStorage.setItem(i, test);
     }
   }
 })
+
+function getLocalStor() {
+  for (var i = 9; i <= 17; i++) {
+    var getStor = localStorage.getItem(i);
+    console.log(getStor);
+    $('.ta-' + i).val(getStor);
+  }
+}
 
 function setDay() {
   var day = daysOfWeek[(dayOfWeek - 1)]
   $('#currentDay').text(day + ', ' + months[month] + ' ' + dateOfWeek);
 }
 
+getLocalStor();
 setDay();
 backgroundColors();
